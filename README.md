@@ -67,20 +67,24 @@
 ### Цель работы
 Знакомство с протоколом SSH, знакомство с понятием брутфорса паролей на примере брутфорса SSH пароля
 ### Ход работы:
-1. Запустите Hydra с заданными параметрами
+1. Запускаю Hydra с параметрами:
 `hydra -l user -V -x 4:4:Aa1 -s 22 -I  62.109.19.160 ssh`
-При необходимости внесите в параметры корректировки
-![Ожидаемый результат](https://storage.yandexcloud.net/shesterikov/CS_24_24/CS_2_1.png)
+
+![Прикрепленное фото работы](https://s139klg.storage.yandex.net/rdisk/7c45131bf77c23d506081330127838e8f2c7867fe4390aa8d01ae6a2cc1858cc/671a5ce1/0S5-avnlyGtePn4FbRxK9vFXBjoLeDpMycYmdC10hOnx-bb3B4R9vUsMIV-mHtzmxHPWh1xOfIoNGNBRV76jsQ==?uid=691504936&filename=ubuntu_1bnWMXlPk9.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=691504936&fsize=14899&hid=943d3e06c947f9a98337421c9931e153&media_type=image&tknv=v2&etag=56e9b7c299b8daff1fddb5705a5ffcf6&ts=6253a03b83a40&s=014fa8320ce1c851fa2cded2add6debc71b5dde06f8fd661f40ba5e069de2ac9&pb=U2FsdGVkX19TP59spczWsJNuK4vm76qEfyuJ-mEfgFO_-vBg5FqlMYhFTeMQlAfftFCn96vOk88tSBY-e6RLw-JoF8bMH-ldLxyBE8JIXJY)
+
 2. В случае успешного запуска можно наблюдать процесс брутфорса
-![Ожидаемый результат](https://storage.yandexcloud.net/shesterikov/CS_24_24/CS_2_2.png)
-3. В случае нахождения пароля Hydra отобразит сообщение с найденным паролем
-![Ожидаемый результат](https://storage.yandexcloud.net/shesterikov/CS_24_24/CS_2_3.png)
-4. При помощи ssh выполните подключение к серверу, указав найденный пароль
+   
+![Прикрепленное фото работы](https://s450vla.storage.yandex.net/rdisk/2bebe4b7f82898f14bb3e0d66abc2ed1a1eaf76930ac2505806ca8c3cb1b39d4/671a5e51/0S5-avnlyGtePn4FbRxK9pomc4Qnic193aKfGVkUUKCYhuXzqIMRpwQz-AgZ9Wsd7ZwP4afR1ExiQkPLUdSz0A==?uid=691504936&filename=ubuntu_ZjkpK9PGp5.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=691504936&fsize=131615&hid=b54a9ae1b589994a3609cfd5ee83be0d&media_type=image&tknv=v2&etag=ba77be3bb1c214ef14b36d1a00626d48&ts=6253a19a77640&s=6262ce4a915d4be438eaf5f4c5bdf8cfbc3d26165fa8a1e17cf7df563adc5600&pb=U2FsdGVkX1_AVq8GT71p7ZJRpqNRHP1YM-r2KEnDfQtgYMiQxqq9H0jaR5b61WdA7VrEeaYWFP4MlHpn946mePBxpTaMQzjn4YzGJzcHC0A)
+
+3. После брутфорса Hydra отобразит сообщение с найденным паролем
+   
+![Прикрепленное фото работы](https://s439vla.storage.yandex.net/rdisk/ba03f63fa09b3c9f2fc386a5f872015c407c6e70c7c782a15b58fd07b961cd7e/671a5f42/0S5-avnlyGtePn4FbRxK9hEceHuUFdCNXbQh4H2ap3dRUIRHGJos6JUxSjtoqUbwnsXzq5kgr1aB3dtNjtkd7g==?uid=691504936&filename=ubuntu_IinSWiViFV.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=691504936&fsize=133424&hid=d9d2f5627744db6eb933877e90610578&media_type=image&tknv=v2&etag=b1b62105d408f2e70786565d1459bfda&ts=6253a2804d480&s=bb179b814aaf6914aeb96130bdf1c90f7f26c87ffa10462a0e82edf5c446c439&pb=U2FsdGVkX1-H4ZetQn-p5If8zPNDGdZWEMNSrp7S89M9B0xdQBQzmKM96WPMvX78UbZzXoAwEmg1EUG64lXx6SS6ZGy56gWA9g0NFEV4TEo)
+
+4. При помощи ssh я выполняю команду ниже, указав найденный пароль. После чего выполняю перемещение между директориями и при помощи команды `cat` отобразите содержимое текстового файла, представленного в директории `/home`.
 
 `ssh user@62.109.19.160`
-![Ожидаемый результат](https://storage.yandexcloud.net/shesterikov/CS_24_24/CS_2_4.png)
-5. Выполните перемещение между директориями и при помощи команды `cat` отобразите содержимое текстового файла, представленного в директории `/home` 
-![Ожидаемый результат](https://storage.yandexcloud.net/shesterikov/CS_24_24/CS_2_5.png)
+
+![Прикрепленное фото работы](https://s174vla.storage.yandex.net/rdisk/d3ab78ed32865ab676a5a0ce0f64bf9ba58dd6da274a6a879cdecef9ed21e847/671a6005/0S5-avnlyGtePn4FbRxK9iPAy-hi1y7NLDttERfnBLT71R15xgRLe4S6Et8OAp9pWOivDyY_D5erQ_Q0yXVopQ==?uid=691504936&filename=ubuntu_ZV7uGIhVyQ.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=691504936&fsize=62458&hid=a77a482a9eaa3e967032ae9034f239ed&media_type=image&tknv=v2&etag=e21b5c6491b9fe189796fa1daf5816d5&ts=6253a33a44b40&s=6ccf2acc53ec54d6c145273a623663bc54a46747b4b9327b56405ea243c51ed8&pb=U2FsdGVkX18CtfPJT9hnElcQ19_8n7mt2i_TKMs1dSygqhQ9d5W0Igp8IeIKjjxEuHipWbTwfNv3JuXC17oNwwbhS2rQ6XJcsT6BFzSmIbc)
 
 ### Контрольные вопросы:
 1. Что такое SSH?
